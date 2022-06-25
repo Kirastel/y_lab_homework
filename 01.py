@@ -3,8 +3,9 @@ import math
 
 
 def domain_name(url):
-  domain = re.findall(r'[/{2}|\.](\w+)\.', url)[0]
-  return domain
+    url = url.replace('.', '/').split('/')
+    url = list(filter(len, url))
+    return url[1]
 
 
 def int32_to_ip(int32):
@@ -16,7 +17,7 @@ def int32_to_ip(int32):
 
 
 def zeros(n):
-    facrorial_n = math.factorial(n)
+    factorial_n = math.factorial(n)
     count_zero = 0
     while factorial_n % 10 == 0:
         factorial_n //= 10
