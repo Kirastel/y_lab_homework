@@ -3,9 +3,11 @@ import math
 
 
 def domain_name(url):
-    url = url.replace('.', '/').split('/')
-    url = list(filter(len, url))
-    return url[1]
+    url = url.replace("http://","")
+    url = url.replace("https://","")
+    url = url.replace("www.","")
+    end = url.find(".")
+    return url[0:url.find('.')]
 
 
 def int32_to_ip(int32):
