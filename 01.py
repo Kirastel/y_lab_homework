@@ -1,13 +1,12 @@
 import re
-import math
 
 
 def domain_name(url):
-    url = url.replace("http://","")
-    url = url.replace("https://","")
-    url = url.replace("www.","")
-    end = url.find(".")
-    return url[0:url.find('.')]
+    url = url.replace("http://", "")
+    url = url.replace("https://", "")
+    url = url.replace("www.", "")
+    point = url.find(".")
+    return url[0:point]
 
 
 def int32_to_ip(int32):
@@ -18,13 +17,11 @@ def int32_to_ip(int32):
     return f'{a1}.{a2}.{a3}.{a4}'
 
 
-def zeros(n):
-    factorial_n = math.factorial(n)
-    count_zero = 0
-    while factorial_n % 10 == 0:
-        factorial_n //= 10
-        count_zero += 1
-    return count_zero
+def zeros(n): 
+    if n % 2 == 1:
+        return 0
+    a = n // 10 + n // 50 + n // 250
+    return a
 
 
 def bananas(s) -> set:
