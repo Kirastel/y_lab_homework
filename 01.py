@@ -21,7 +21,7 @@ def zeros(n):
     return a
 
 
-def bananas(s) -> set:
+def bananas(s):
     result = set()
     def f(string, m, n):
         if n > 5:
