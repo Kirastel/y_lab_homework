@@ -15,10 +15,11 @@ def int32_to_ip(int32):
 
 
 def zeros(n): 
-    if n % 2 == 1:
-        return 0
-    a = n // 10 + n // 50 + n // 250
-    return a
+    count_zero = 0
+    while n:
+        n = n // 5
+        count_zero += n
+    return count_zero
 
 
 def bananas(s):
