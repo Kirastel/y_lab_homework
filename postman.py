@@ -60,28 +60,4 @@ if __name__ == '__main__':
     route = get_route(variants)
     print(route)
 
-# def get_list_distances(list_point: list) -> list:
-#     distances = [distance(item, list_point[index])
-#             for index, item in enumerate(list_point, start=-len(list_point) + 1)]
-#     return distances
 
-# def get_route(variants):
-#     list1 = []
-#     for variant in variants:
-#         distances = get_list_distances(variant)
-#         list1.append((sum(distances), variant, distances))
-#
-#     min_route = min(list1, key=lambda x: x[0])
-#
-#     variant = min_route[1]
-#     distances = min_route[2]
-#     total_distance = min_route[0]
-#
-#     result = f'{variant[0]}'
-#     total = 0
-#     for i in range(1, len(variant)):
-#         total += distances[i - 1]
-#         result += f' -> {variant[i]}[{total}]'
-#     result += f' = {total}'
-#
-#     return result
