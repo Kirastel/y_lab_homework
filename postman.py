@@ -1,6 +1,7 @@
 import random
 import math
 
+
 points = [(0, 1), (1, 4), (4, 1), (5, 5), (7, 2)]
 number_of_options = math.factorial(len(points) - 1)
 
