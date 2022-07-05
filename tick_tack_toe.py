@@ -39,7 +39,7 @@ class Game:
                 ch = board[y][x]
                 win = True
                 for i in range(1, 5):
-                    if (board[y + i][x + i] != ch) and (board[y - i][x + i] != ch) :
+                    if (board[y + i][x + i] != ch) and (board[y - i][x + i] != ch):
                         win = False
                         break
                 if win:
@@ -86,7 +86,7 @@ class Game:
             else:
                 print(f'Ход компьютера - {move}')
                 return move
-
+            
     def player_move(self) -> int:
         while True:
             print('Ваш ход:')
