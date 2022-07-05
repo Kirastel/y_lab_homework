@@ -39,7 +39,7 @@ class Game:
                 ch = board[y][x]
                 win = True
                 for i in range(1, 5):
-                    if board[y + i][x + i] != ch:
+                    if (board[y + i][x + i] != ch) and (board[y - i][x + i] != ch) :
                         win = False
                         break
                 if win:
@@ -61,6 +61,7 @@ class Game:
                         loser = 'X'
                     elif ch == 'O':
                         loser = 'O'
+
         for x in range(4, 10):
             for y in range(6):
                 ch = board[y][x]
@@ -88,7 +89,7 @@ class Game:
 
     def player_move(self) -> int:
         while True:
-            print('Ваш ход')
+            print('Ваш ход:')
             try:
                 move = int(input('> '))
                 if self.cell_is_occupied(self.board, move):
@@ -114,7 +115,7 @@ class Game:
         if cell <= 10:
             occupied = cell not in board[0]
         else:
-            occupied = cell not in board[cell // 10]
+            occupied = cell not in board[(cell - 1) // 10]
         return occupied
 
 
